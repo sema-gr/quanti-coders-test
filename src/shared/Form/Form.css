@@ -1,0 +1,254 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-font {
+    font-family: 'Geometria';
+    font-size: 48px;
+    font-weight: 800;
+    color: rgb(53, 77, 128);
+}
+
+.switcher {
+    display: flex;
+    border: 2px solid #333b65;
+    border-radius: 10px;
+    overflow: hidden;
+    width: fit-content;
+    margin-top: 20px;
+}
+
+.switch-btn {
+    padding: 10px 25px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'Geometria', sans-serif;
+    color: #333b65;
+    transition: 0.2s ease;
+}
+
+.switch-btn.active {
+    background: #333b65;
+    color: white;
+}
+
+.switch-btn:not(.active):hover {
+    background: #eef0fa;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 300px;
+    padding: 20px;
+    font-family: 'Geometria', sans-serif;
+}
+
+.content-div {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.first-line {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.first-line .main-div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.first-line .main-div input[type='text'] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    border: 1.5px solid #d1d9e6;
+    border-radius: 6px;
+    background-color: #f9fbff;
+    font-size: 13px;
+    color: #222;
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.input-with-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.input-with-link .main-div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-with-link .main-div input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-div input[type='text'] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    border: 1.5px solid #d1d9e6;
+    border-radius: 6px;
+    background-color: #f9fbff;
+    font-size: 13px;
+    color: #222;
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+p {
+    font-size: 12px;
+    color: #6c757d;
+    margin-bottom: 4px;
+    font-weight: 600;
+    user-select: none;
+}
+
+input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1.5px solid #d1d9e6;
+    border-radius: 6px;
+    background-color: #f9fbff;
+    font-size: 13px;
+    color: #222;
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+input[type='text']:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #e7f0fe;
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
+}
+
+.logo-link {
+    color: #3b82f6;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 4px;
+    font-size: 13px;
+    user-select: none;
+    align-self: flex-start;
+    transition: color 0.2s ease;
+}
+
+.logo-link:hover {
+    color: #1e40af;
+}
+
+.row-div {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.row-div .main-div {
+    flex: 1;
+}
+
+.main-div input[type='text'] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    border: 1.5px solid #d1d9e6;
+    border-radius: 6px;
+    background-color: #f9fbff;
+    font-size: 13px;
+    color: #222;
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+#postIndex {
+    max-width: 150px;
+}
+
+@media screen and (max-width: 1024px) {
+    .main-content {
+        gap: 30px;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-font {
+        font-size: 32px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .content-div {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    #postIndex {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-font {
+        font-size: 24px;
+        margin-top: 15px;
+    }
+
+    .switch-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .first-line {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .row-div {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .input-with-link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .logo-link {
+        align-self: flex-end;
+    }
+}
