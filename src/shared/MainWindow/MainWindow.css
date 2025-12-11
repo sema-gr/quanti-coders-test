@@ -1,10 +1,11 @@
 .main-window {
     width: 90%;
-    height: 80%;
+    min-height: 60vh;
+    margin: 30px auto;
+    padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
@@ -13,15 +14,14 @@
 @media screen and (max-width: 1024px) {
     .main-window {
         width: 95%;
-        height: 90%;
+        min-height: 70vh;
     }
 }
 
 @media screen and (max-width: 768px) {
     .main-window {
-        height: auto;
+        width: 95%;
         min-height: 50vh;
         border-radius: 10px;
-        padding-top: 20px;
     }
 }

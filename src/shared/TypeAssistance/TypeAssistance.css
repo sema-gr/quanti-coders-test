@@ -16,21 +16,33 @@
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+    gap: 170px;
+    font-family: 'Geometria';
 }
 
 .icon-box {
     cursor: pointer;
     padding: 10px;
     border-radius: 10px;
+    border: none;
+    background: transparent;
     color: #8a8a8a;
-    user-select: none;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 8px;
     transition:
         color 0.3s ease,
         background-color 0.3s ease;
-    position: relative;
+}
+
+.button-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    gap: 5px;
+    color: rgb(53, 77, 128);
 }
 
 .icon-box .icon-image {
@@ -42,7 +54,6 @@
 
 .icon-box.active {
     background-color: #7d4f8f;
-    color: white;
 }
 
 .icon-box.active .icon-image {
@@ -50,16 +61,307 @@
 }
 
 .icon-label {
-    margin-top: 8px;
     font-weight: 600;
     font-size: 14px;
+    text-align: start;
 }
 
 .info-box {
-    margin-top: 15px;
-    padding: 15px;
-    border-top: 2px solid #7d4f8f;
+    position: relative;
+    margin-top: 30px;
+    padding: 32px 40px;
+    background-color: #f5f7fa;
+    border: 1px solid #e0e4e9;
+    border-radius: 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Geometria', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 50px;
+}
+
+.arrow-pointer {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: #f5f7fa;
+    border-top: 1.5px solid #d1d9e6;
+    border-left: 1.5px solid #d1d9e6;
+    top: -14px;
+    transform: rotate(45deg);
+    transition: left 0.3s ease;
+    z-index: 10;
+}
+
+.info-pay-div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.info-box h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.info-box .columns-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.info-box .payment-methods {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.info-box .payment-method {
+    width: 180px;
+    height: 120px;
+    background-color: #e8edf5;
+    border: none;
+    border-radius: 12px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: grey;
+}
+
+.info-box .payment-method.active {
+    background-color: #7d4f8f;
+    color: white;
+}
+
+.info-box .payment-method.active span {
+    color: white;
+}
+
+.info-box .payment-method img {
+    width: 120px;
+    height: 50px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.7);
+}
+
+.info-box .payment-method.active img {
+    filter: none;
+}
+
+.info-box .payment-method span {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.info-box .payment-method:focus-visible {
+    outline: 2px solid #7d4f8f;
+    outline-offset: 2px;
+}
+
+.info-box .card-fields {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-box .card-field {
+    background-color: rgb(53, 77, 128);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-field p {
     font-size: 14px;
-    color: #333;
-    min-height: 50px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.info-box .card-input-row {
+    display: flex;
+    gap: 12px;
+}
+
+.info-box .card-input {
+    flex: 1;
+    background-color: white;
+    border: 1px solid #d0d6e0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 16px;
+}
+
+.info-box .card-number-row {
+    display: flex;
+    gap: 12px;
+}
+
+.info-box .card-number-input {
+    width: 60px;
+    text-align: center;
+}
+
+.card-field-time {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.field-time {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-pay-button {
+    width: 250px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Geometria';
+    font-weight: 700;
+    font-size: 16px;
+    background: linear-gradient(90deg, #e73c5f 0%, #9f67b2 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(231, 60, 95, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    margin-top: 30px;
+}
+
+.info-pay-button:hover {
+    box-shadow: 0 12px 28px rgba(231, 60, 95, 0.5);
+}
+
+@media (max-width: 480px) {
+    .icons-wrapper {
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .info-box {
+        flex-direction: column;
+        padding: 20px;
+        margin-top: 40px;
+        align-items: center;
+    }
+    .info-box .payment-methods {
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+    }
+    .info-box .payment-method {
+        width: 100%;
+        height: auto;
+        padding: 16px;
+    }
+    .info-box h3 {
+        text-align: center;
+    }
+    .info-pay-div {
+        align-items: center;
+    }
+    .info-box .card-fields {
+        width: 100%;
+    }
+    .info-box .card-input-row,
+    .info-box .card-number-row,
+    .card-field-time {
+        flex-direction: column;
+    }
+    .info-box .card-number-input {
+        width: 100%;
+        text-align: left;
+    }
+    .info-box .card-input {
+        width: auto;
+    }
+    .arrow-pointer {
+        display: none;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .icons-wrapper {
+        gap: 60px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .info-box {
+        flex-direction: column;
+        padding: 36px;
+        margin-top: 60px;
+        align-items: center;
+
+        max-width: 620px;
+        margin-left: auto;
+        margin-right: auto;
+
+        border-radius: 16px;
+    }
+
+    .info-box .payment-methods {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+    }
+
+    .info-box .payment-method {
+        width: 100%;
+        height: 130px;
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .info-box h3 {
+        text-align: center;
+    }
+
+    .info-pay-div {
+        width: 100%;
+        align-items: center;
+    }
+
+    .info-box .card-fields {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .info-box .card-input-row,
+    .info-box .card-number-row,
+    .card-field-time {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .info-box .card-number-input {
+        width: 80px;
+        text-align: center;
+    }
+    .arrow-pointer {
+        display: none;
+    }
 }
